@@ -19,7 +19,7 @@ const nextConfig = {
 			},
 		],
 	},
-	basePath: '/bbb-platform',
+	// basePath: '/bbb-platform',
 }
 
 export default nextConfig

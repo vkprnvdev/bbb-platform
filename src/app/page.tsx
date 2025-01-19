@@ -5,10 +5,10 @@ export default function Home() {
 	return (
 		<div className='flex flex-col gap-10'>
 			<Button>
-				<Link href={'bbb-platform/auth/login'}>Login</Link>
+				<Link href={'auth/login'}>Login</Link>
 			</Button>
 			<Button>
-				<Link href={'bbb-platform/auth/register'}>Register</Link>
+				<Link href={'auth/register'}>Register</Link>
 			</Button>
 		</div>
 	)
