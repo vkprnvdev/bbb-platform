@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	experimental: {
-		missingSuspenseWithCSRBailout: false
+		missingSuspenseWithCSRBailout: false,
 	},
 	env: {
 		SERVER_URL: process.env.SERVER_URL,
-		GOOGLE_RECAPTCHA_SITE_KEY: process.env.GOOGLE_RECAPTCHA_SITE_KEY
+		GOOGLE_RECAPTCHA_SITE_KEY: process.env.GOOGLE_RECAPTCHA_SITE_KEY,
 	},
 	images: {
 		remotePatterns: [
@@ -15,10 +15,11 @@ const nextConfig = {
 			},
 			{
 				protocol: 'https',
-				hostname: 'avatars.yandex.net'
-			}
-		]
-	}
-};
+				hostname: 'avatars.yandex.net',
+			},
+		],
+	},
+	basePath: '/bbb-platform',
+}
 
-export default nextConfig;
+export default nextConfig
