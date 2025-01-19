@@ -60,10 +60,18 @@ const config = {
 					white: '#F3F3F3',
 				},
 				fill: {
-					white_1: '#F3F3F3',
-					white_2: '#F6F6F6',
-					gray_1: '#A3A3A3',
-					gray_2: '#E1E1E1',
+					white: {
+						'1': '#F3F3F3',
+						'2': '#F6F6F6',
+					},
+					// white_1: '#F3F3F3',
+					// white_2: '#F6F6F6',
+					gray: {
+						'1': '#A3A3A3',
+						'2': '#E1E1E1',
+					},
+					// gray_1: '#A3A3A3',
+					// gray_2: '#E1E1E1',
 				},
 			},
 			fontFamily: {
