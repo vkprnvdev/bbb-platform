@@ -28,18 +28,18 @@ export function AuthWrapper({
 	children,
 }: PropsWithChildren<AuthWrapperProps>) {
 	return (
-		<Card className='w-[450px] rounded-[45px] py-[18px]'>
+		<Card className='w-[450px] rounded-[45px] py-[6px]'>
 			<CardHeader className='py-0 px-9'>
 				<CardTitle className='text-[40px]'>{heading}</CardTitle>
 				{description && <CardDescription>{description}</CardDescription>}
 			</CardHeader>
-			<CardContent className='px-9'>
+			<CardContent className='px-9 py-1'>
 				{isShowSocial && <AuthSocial />}
 				{children}
 			</CardContent>
 			<CardFooter className='px-9 py-0'>
 				{backButtonLabel && backButtonHref && (
-					<Button variant='link' className='w-full font-normal text-lg'>
+					<Button variant='link' className='w-full font-normal text-[14px]'>
 						<Link href={backButtonHref}>{backButtonLabel}</Link>
 					</Button>
 				)}

@@ -15,24 +15,28 @@ import { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import { LoginSchema, TypeLoginSchema } from '../schemes'
+import { RegisterSchema, TypeRegisterSchema } from '../schemes/register.schema'
 import { AuthWrapper } from './AuthWrapper'
 
-export function LoginForm() {
+export function RegisterForm() {
 	const router = useRouter()
 
 	const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
 
-	const form = useForm<TypeLoginSchema>({
-		resolver: zodResolver(LoginSchema),
+	const form = useForm<TypeRegisterSchema>({
+		resolver: zodResolver(RegisterSchema),
 		defaultValues: {
 			email: '',
 			password: '',
+			passwordRepeat: '',
 		},
 	})
 
-	const onSubmit = (values: TypeLoginSchema) => {
+	// const { register, isLoadingRegister } = useRegisterMutation()
+
+	const onSubmit = (values: TypeRegisterSchema) => {
 		if (recaptchaValue) {
+			// register({ values, recaptcha: recaptchaValue })
 			console.log(values)
 			router.push('/dashboard/settings')
 		} else {
@@ -42,9 +46,9 @@ export function LoginForm() {
 
 	return (
 		<AuthWrapper
-			heading='Вход'
-			backButtonLabel='Нет аккаунта? - Зарегистрироваться'
-			backButtonHref='/auth/register'
+			heading='Регистрация'
+			backButtonLabel='Уже есть аккаунт? - Войти'
+			backButtonHref='/auth/login'
 			isShowSocial
 		>
 			<Form {...form}>
@@ -56,9 +60,10 @@ export function LoginForm() {
 							<FormItem>
 								<FormControl>
 									<Input
-										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 focus-visible:ring-fill-gray-1'
+										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 text-2xl focus-visible:ring-fill-gray-1'
 										placeholder='Электронная почта'
 										type='email'
+										// disabled={isLoadingRegister}
 										{...field}
 									/>
 								</FormControl>
@@ -75,6 +80,25 @@ export function LoginForm() {
 									<Input
 										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 focus-visible:ring-fill-gray-1'
 										placeholder='Пароль'
+										// disabled={isLoadingRegister}
+										type='password'
+										{...field}
+									/>
+								</FormControl>
+								<FormMessage className='leading-none pl-3' />
+							</FormItem>
+						)}
+					/>
+					<FormField
+						control={form.control}
+						name='passwordRepeat'
+						render={({ field }) => (
+							<FormItem>
+								<FormControl>
+									<Input
+										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 text-2xl focus-visible:ring-fill-gray-1'
+										placeholder='Подтверждение пароля'
+										// disabled={isLoadingRegister}
 										type='password'
 										{...field}
 									/>
@@ -93,6 +117,7 @@ export function LoginForm() {
 					<Button
 						type='submit'
 						className='bg-fill-gray-1 w-full h-[50px] text-xl rounded-[15px]'
+						// disabled={isLoadingRegister}
 					>
 						Подтвердить
 					</Button>
