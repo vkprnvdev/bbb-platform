@@ -37,9 +37,9 @@ export function AuthWrapper({
 				{isShowSocial && <AuthSocial />}
 				{children}
 			</CardContent>
-			<CardFooter className='px-9 m-0 py-0 gap-0'>
+			<CardFooter className='px-9 py-0'>
 				{backButtonLabel && backButtonHref && (
-					<Button variant='link' className='w-full font-normal'>
+					<Button variant='link' className='w-full font-normal text-lg'>
 						<Link href={backButtonHref}>{backButtonLabel}</Link>
 					</Button>
 				)}

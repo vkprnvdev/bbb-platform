@@ -53,16 +53,16 @@ export function LoginForm() {
 						control={form.control}
 						name='email'
 						render={({ field }) => (
-							<FormItem>
+							<FormItem className='text-lg'>
 								<FormControl>
 									<Input
-										className='h-[50px] text-[50px]'
+										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1'
 										placeholder='Электронная почта'
 										type='email'
 										{...field}
 									/>
 								</FormControl>
-								<FormMessage />
+								<FormMessage className='leading-none pl-3' />
 							</FormItem>
 						)}
 					/>
@@ -73,17 +73,17 @@ export function LoginForm() {
 							<FormItem>
 								<FormControl>
 									<Input
-										className='h-[50px]'
+										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1'
 										placeholder='Пароль'
 										type='password'
 										{...field}
 									/>
 								</FormControl>
-								<FormMessage />
+								<FormMessage className='leading-none pl-3' />
 							</FormItem>
 						)}
 					/>
-					<div className='flex justify-center'>
+					<div className='flex justify-center pt-1'>
 						<ReCAPTCHA
 							sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY as string}
 							onChange={setRecaptchaValue}
@@ -92,7 +92,7 @@ export function LoginForm() {
 					</div>
 					<Button
 						type='submit'
-						className='bg-fill-gray-1 w-full h-[50px] p-0 m-0'
+						className='bg-fill-gray-1 w-full h-[50px] text-xl rounded-[15px]'
 					>
 						Подтвердить
 					</Button>
