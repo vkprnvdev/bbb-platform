@@ -8,6 +8,7 @@ import {
 	FormItem,
 	FormMessage,
 	Input,
+	PasswordField,
 } from '@/shared/components/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
@@ -60,7 +61,7 @@ export function RegisterForm() {
 							<FormItem>
 								<FormControl>
 									<Input
-										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 text-2xl focus-visible:ring-fill-gray-1'
+										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 text-xl focus-visible:ring-fill-gray-1'
 										placeholder='Электронная почта'
 										type='email'
 										// disabled={isLoadingRegister}
@@ -71,14 +72,14 @@ export function RegisterForm() {
 							</FormItem>
 						)}
 					/>
-					<FormField
+					{/* <FormField
 						control={form.control}
 						name='password'
 						render={({ field }) => (
 							<FormItem>
 								<FormControl>
 									<Input
-										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 focus-visible:ring-fill-gray-1'
+										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 text-xl focus-visible:ring-fill-gray-1'
 										placeholder='Пароль'
 										// disabled={isLoadingRegister}
 										type='password'
@@ -88,15 +89,16 @@ export function RegisterForm() {
 								<FormMessage className='leading-none pl-3' />
 							</FormItem>
 						)}
-					/>
-					<FormField
+					/> */}
+					<PasswordField placeholder='Пароль' />
+					{/* <FormField
 						control={form.control}
 						name='passwordRepeat'
 						render={({ field }) => (
 							<FormItem>
 								<FormControl>
 									<Input
-										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 text-2xl focus-visible:ring-fill-gray-1'
+										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 text-xl focus-visible:ring-fill-gray-1'
 										placeholder='Подтверждение пароля'
 										// disabled={isLoadingRegister}
 										type='password'
@@ -106,7 +108,8 @@ export function RegisterForm() {
 								<FormMessage className='leading-none pl-3' />
 							</FormItem>
 						)}
-					/>
+					/> */}
+					<PasswordField placeholder='Подтверждение пароля' />
 					<div className='flex justify-center pt-1'>
 						<ReCAPTCHA
 							sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY as string}

@@ -8,6 +8,7 @@ import {
 	FormItem,
 	FormMessage,
 	Input,
+	PasswordField,
 } from '@/shared/components/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
@@ -56,7 +57,7 @@ export function LoginForm() {
 							<FormItem>
 								<FormControl>
 									<Input
-										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 focus-visible:ring-fill-gray-1'
+										className='h-[50px] text-xl rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 focus-visible:ring-fill-gray-1'
 										placeholder='Электронная почта'
 										type='email'
 										{...field}
@@ -66,7 +67,7 @@ export function LoginForm() {
 							</FormItem>
 						)}
 					/>
-					<FormField
+					{/* <FormField
 						control={form.control}
 						name='password'
 						render={({ field }) => (
@@ -78,11 +79,17 @@ export function LoginForm() {
 										type='password'
 										{...field}
 									/>
+									<PasswordInput
+										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 focus-visible:ring-fill-gray-1'
+										placeholder='Пароль'
+										type='password'
+									></PasswordInput>
 								</FormControl>
 								<FormMessage className='leading-none pl-3' />
 							</FormItem>
 						)}
-					/>
+					/> */}
+					<PasswordField placeholder='Пароль' />
 					<div className='flex justify-center pt-1'>
 						<ReCAPTCHA
 							sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY as string}
