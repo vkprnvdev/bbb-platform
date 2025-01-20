@@ -67,29 +67,7 @@ export function LoginForm() {
 							</FormItem>
 						)}
 					/>
-					{/* <FormField
-						control={form.control}
-						name='password'
-						render={({ field }) => (
-							<FormItem>
-								<FormControl>
-									<Input
-										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 focus-visible:ring-fill-gray-1'
-										placeholder='Пароль'
-										type='password'
-										{...field}
-									/>
-									<PasswordInput
-										className='h-[50px] rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 focus-visible:ring-fill-gray-1'
-										placeholder='Пароль'
-										type='password'
-									></PasswordInput>
-								</FormControl>
-								<FormMessage className='leading-none pl-3' />
-							</FormItem>
-						)}
-					/> */}
-					<PasswordField placeholder='Пароль' />
+					<PasswordField name='password' placeholder='Пароль' />
 					<div className='flex justify-center pt-1'>
 						<ReCAPTCHA
 							sitekey={process.env.GOOGLE_RECAPTCHA_SITE_KEY as string}

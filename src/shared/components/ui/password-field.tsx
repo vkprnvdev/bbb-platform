@@ -8,12 +8,12 @@ import { FormControl, FormField, FormItem, FormMessage } from './form'
 import { Input } from './input'
 
 type PasswordFieldProps = {
-	name?: string
+	name: string
 	placeholder: string
 }
 
 export function PasswordField({
-	name = 'password',
+	name,
 	placeholder,
 }: PasswordFieldProps) {
 	const { control, getFieldState } = useFormContext()
