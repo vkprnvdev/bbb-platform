@@ -5,13 +5,10 @@ export const SettingsSchema = z.object({
 	name: z.string().nonempty({
 		message: 'Некорректное имя',
 	}),
-	// subjects: z.string().array().nonempty({
-	// 	message: 'Выберите хотя бы один предмет',
-	// }),
 	subjects: z
 		.array(z.string().min(1))
 		.min(1)
-		.nonempty('Please select at least one subject.'),
+		.nonempty('Выберите хотя бы один предмет'),
 	exam: z.enum(['OGE', 'EGE']),
 })
 

@@ -1,22 +1,18 @@
 import {
-	Cat,
-	Dog,
-	Fish,
+	Atom,
+	Binary,
+	BookA,
+	Divide,
 	LucideProps,
-	MoonIcon,
-	Rabbit,
-	SunMedium,
-	Turtle,
+	Radical
 } from 'lucide-react'
 
 export const Icons = {
-	moonIcon: MoonIcon,
-	sunIcon: SunMedium,
-	cat: Cat,
-	dog: Dog,
-	fish: Fish,
-	rabbit: Rabbit,
-	turtle: Turtle,
+	radical: Radical,
+	divide: Divide,
+	bookA: BookA,
+	binary: Binary,
+	atom: Atom,
 	gitHub: ({ ...props }: LucideProps) => (
 		<svg
 			aria-hidden='true'

@@ -13,47 +13,27 @@ import {
 	FormMessage,
 	Input,
 	Tabs,
-	TabsContent,
 	TabsList,
 	TabsTrigger,
 } from '@/shared/components/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import {
 	SettingsSchema,
 	type TypeSettingsSchema,
 } from '../schemes/settings.schema'
-import { Icons, MultiSelect } from './multi-select'
-
-const subjectsList = [
-	{
-		value: 'base_math',
-		label: 'Базовая математика',
-		icon: Icons.rabbit,
-	},
-	{
-		value: 'russian_lang',
-		label: 'Русский язык',
-		icon: Icons.fish,
-	},
-	{
-		value: 'profile_math',
-		label: 'Профильная математика',
-		icon: Icons.dog,
-	},
-	{
-		value: 'physics',
-		label: 'Физика',
-		icon: Icons.turtle,
-	},
-	{
-		value: 'computer_science',
-		label: 'Информатика',
-		icon: Icons.cat,
-	},
-]
+import { StudentContent } from './StudentContent'
+import { TeacherContent } from './TeacherСontent'
 
 export function SettingsForm() {
+	const [tab, setTab] = useState<string>('')
+
+	const onTabChange = (value: string) => {
+		setTab(value)
+		console.log(value)
+	}
+
 	const form = useForm<TypeSettingsSchema>({
 		resolver: zodResolver(SettingsSchema),
 		defaultValues: {
@@ -65,11 +45,17 @@ export function SettingsForm() {
 	})
 
 	const onSubmit = (values: TypeSettingsSchema) => {
+		const val = { ...values, role: tab.toUpperCase }
 		console.log(values)
 		// router.push('/dashboard/settings')
 	}
 	return (
-		<Tabs defaultValue='student' className='w-[506px]'>
+		<Tabs
+			value={tab}
+			onValueChange={value => onTabChange(value)}
+			defaultValue='student'
+			className='w-[506px]'
+		>
 			<Card className='px-[36px] py-[30px] rounded-[60px]'>
 				<Form {...form}>
 					<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-2'>
@@ -111,30 +97,8 @@ export function SettingsForm() {
 									</FormItem>
 								)}
 							/>
-							<TabsContent value='teacher'>
-								<FormField
-									control={form.control}
-									name='subjects'
-									render={({ field }) => (
-										<FormItem>
-											<FormControl>
-												<MultiSelect
-													className='min-h-[50px] text-xl rounded-[15px] border-fill-gray-1 placeholder-fill-gray-1 focus-visible:ring-fill-gray-1 font-normal'
-													options={subjectsList}
-													onValueChange={field.onChange}
-													defaultValue={field.value}
-													placeholder='Выберите предметы'
-													variant='inverted'
-													// animation={2}
-													maxCount={3}
-												/>
-											</FormControl>
-											<FormMessage className='leading-none pl-3' />
-										</FormItem>
-									)}
-								/>
-							</TabsContent>
-							<TabsContent value='student'></TabsContent>
+							<TeacherContent form={form} />
+							<StudentContent form={form} />
 							<Button
 								type='submit'
 								className='bg-fill-gray-1 w-full h-[50px] text-xl rounded-[15px] mt-2'
