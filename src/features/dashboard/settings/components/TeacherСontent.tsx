@@ -1,13 +1,9 @@
 import {
-	CardDescription,
 	FormControl,
 	FormField,
 	FormItem,
 	FormMessage,
-	Tabs,
 	TabsContent,
-	TabsList,
-	TabsTrigger,
 } from '@/shared/components/ui'
 import { UseFormReturn } from 'react-hook-form'
 import { TypeSettingsSchema } from '../schemes/settings.schema'
@@ -41,32 +37,13 @@ const subjectsList = [
 	},
 ]
 
-interface StudentContentProps {
+interface TeacherContentProps {
 	form: UseFormReturn<TypeSettingsSchema, any, undefined>
 }
 
-export function StudentContent({ form }: StudentContentProps) {
+export function TeacherContent({ form }: TeacherContentProps) {
 	return (
-		<TabsContent value='student'>
-			<Tabs defaultValue='OGE' className='flex flex-col items-center'>
-				<CardDescription className='text-xl font-bold text-font-black my-1'>
-					К чему вы собираетесь готовиться?
-				</CardDescription>
-				<TabsList className='w-[432px] h-[50px] mb-2 text-xl rounded-[15px] border border-fill-gray-1 justify-between p-0'>
-					<TabsTrigger
-						className='h-[49px] w-[215px] rounded-[15px] data-[state=active]:shadow-none data-[state=active]:bg-fill-gray-1 data-[state=active]:text-font-white'
-						value='OGE'
-					>
-						ОГЭ
-					</TabsTrigger>
-					<TabsTrigger
-						className='h-[49px] w-[215px] rounded-[15px] data-[state=active]:shadow-none data-[state=active]:bg-fill-gray-1 data-[state=active]:text-font-white'
-						value='EGE'
-					>
-						ЕГЭ
-					</TabsTrigger>
-				</TabsList>
-			</Tabs>
+		<TabsContent value='TEACHER'>
 			<FormField
 				control={form.control}
 				name='subjects'
