@@ -22,9 +22,7 @@ export default function RootLayout({
 			<body className={`${rubik.className} antialiased`}>
 				<MainProvider>
 					<div className='relative flex min-h-screen flex-col bg-back'>
-						<div className='flex h-screen w-full items-center justify-center px-4'>
-							{children}
-						</div>
+						{children}
 					</div>
 				</MainProvider>
 			</body>
