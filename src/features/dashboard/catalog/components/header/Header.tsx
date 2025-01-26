@@ -5,9 +5,9 @@ import { SubjectsList } from './SubjectsList'
 
 export function Header() {
 	return (
-		<header className='h-[65px] w-full bg-fill-white-1'>
+		<header className='h-[54px] w-full bg-fill-white-1'>
 			<Container className='h-full w-full flex items-center justify-between'>
-				<Logo />
+				{/* <Logo /> */}
 				<SubjectsList />
 				<Profile />
 			</Container>

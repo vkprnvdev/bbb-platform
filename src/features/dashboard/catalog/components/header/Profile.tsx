@@ -30,7 +30,7 @@ export function Profile() {
 				<DropdownMenuTrigger>
 					<ChevronDown className='cursor-pointer' />
 				</DropdownMenuTrigger>
-				<DropdownMenuContent className='mt-[16px] w-[233px] border-t-0 border-l-px shadow-none bg-fill-white-1 rounded-t-none'>
+				<DropdownMenuContent className='mt-[10px] w-[232px] border-t-0 border-spacing-px border-[#BEBEBE] shadow-none bg-fill-white-1 rounded-t-none rounded-r-none'>
 					<DropdownMenuItem className='cursor-pointer focus:bg-fill-gray-2'>
 						<UserRound />
 						Личный кабинет
