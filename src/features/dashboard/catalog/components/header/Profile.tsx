@@ -27,8 +27,10 @@ export function Profile() {
 			</Avatar>
 			<span>Иван Иванович</span>
 			<DropdownMenu>
-				<DropdownMenuTrigger>
-					<ChevronDown className='mr-[13px] cursor-pointer' strokeLinecap='inherit' />
+				<DropdownMenuTrigger className='outline-none'>
+					<ChevronDown
+						className='mr-[13px] cursor-pointer'
+					/>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent
 					align='end'
