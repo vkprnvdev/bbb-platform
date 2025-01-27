@@ -18,7 +18,7 @@ import {
 
 export function Profile() {
 	return (
-		<div className='h-full flex items-center justify-between gap-[15px] mx-[13px]'>
+		<div className='h-full flex items-center justify-between gap-[15px]'>
 			<Bell className='cursor-pointer' />
 			<div className='h-full w-px bg-[#BEBEBE]'></div>
 			<Avatar>
@@ -28,9 +28,12 @@ export function Profile() {
 			<span>Иван Иванович</span>
 			<DropdownMenu>
 				<DropdownMenuTrigger>
-					<ChevronDown className='cursor-pointer' />
+					<ChevronDown className='mr-[13px] cursor-pointer' strokeLinecap='inherit' />
 				</DropdownMenuTrigger>
-				<DropdownMenuContent className='mt-[10px] w-[232px] border-t-0 border-spacing-px border-[#BEBEBE] shadow-none bg-fill-white-1 rounded-t-none rounded-r-none'>
+				<DropdownMenuContent
+					align='end'
+					className='w-[232px] mt-[11px] border-t-0 border-spacing-px border-[#BEBEBE] shadow-none bg-fill-white-1 rounded-t-none rounded-r-none'
+				>
 					<DropdownMenuItem className='cursor-pointer focus:bg-fill-gray-2'>
 						<UserRound />
 						Личный кабинет

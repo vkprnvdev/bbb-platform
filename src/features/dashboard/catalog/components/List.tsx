@@ -15,7 +15,8 @@ export function List({ label, buttonLabel }: ListProps) {
 				{buttonLabel}
 				<ChevronRight size={15} />
 			</div>
-			<div className='grid grid-cols-4 gap-[10px] h-full'>
+			<div className='grid grid-cols-5 gap-[10px] h-full'>
+				<div className='bg-fill-gray-2 rounded-[17px]'></div>
 				<div className='bg-fill-gray-2 rounded-[17px]'></div>
 				<div className='bg-fill-gray-2 rounded-[17px]'></div>
 				<div className='bg-fill-gray-2 rounded-[17px]'></div>
