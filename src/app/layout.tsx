@@ -8,7 +8,7 @@ const rubik = Rubik({
 })
 
 export const metadata: Metadata = {
-	title: 'BBB Platform',
+	title: 'HardSkills',
 	description: 'Perfect platform for exam preparation.',
 }
 
