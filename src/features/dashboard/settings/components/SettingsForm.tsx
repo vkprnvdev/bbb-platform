@@ -40,7 +40,7 @@ export function SettingsForm() {
 	const onSubmit = (values: TypeSettingsSchema) => {
 		const val = { ...values, role: tabRole, exam: tabExam }
 		toast.message(`Добро пожаловать, ${val.name}`)
-		router.push('/dashboard/catalog')
+		router.push('/dashboard/catalog/math')
 	}
 	return (
 		<Tabs
