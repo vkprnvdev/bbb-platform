@@ -1,3 +1,6 @@
 export * from './Catalog'
 export * from './MiniHeader'
+export * from './Pres'
+export * from './Tasks'
+export * from './Tests'
 export * from './Videos'

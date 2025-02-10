@@ -25,16 +25,14 @@ export function Profile() {
 				<AvatarImage src='#' />
 				<AvatarFallback className='bg-fill-gray-2'>ИИ</AvatarFallback>
 			</Avatar>
-			<span>Иван Иванович</span>
+			<span>Иван Иванов</span>
 			<DropdownMenu>
 				<DropdownMenuTrigger className='outline-none'>
-					<ChevronDown
-						className='mr-[13px] cursor-pointer'
-					/>
+					<ChevronDown className='mr-[13px] cursor-pointer' />
 				</DropdownMenuTrigger>
 				<DropdownMenuContent
 					align='end'
-					className='w-[232px] mt-[11px] border-t-0 border-spacing-px border-[#BEBEBE] shadow-none bg-fill-white-1 rounded-t-none rounded-r-none'
+					className='w-[215px] mt-[11px] border-t-0 border-spacing-px border-[#BEBEBE] shadow-none bg-fill-white-1 rounded-t-none rounded-r-none'
 				>
 					<DropdownMenuItem className='cursor-pointer focus:bg-fill-gray-2'>
 						<UserRound />
